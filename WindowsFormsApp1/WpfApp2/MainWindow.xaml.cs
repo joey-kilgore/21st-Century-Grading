@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tesseract;
 
 namespace WpfApp2
 {
@@ -38,7 +39,26 @@ namespace WpfApp2
 
         private void KeySubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            printToConsole(filename);
+            printToConsole(KeyTextBox.Text);
+        }
+
+        public static void printToConsole(string filePath)
+        {
+           
+                Console.WriteLine("CURRENT DIRECTORY: " + System.IO.Directory.GetCurrentDirectory());
+                
+                String tessdataDirectory = System.IO.Directory.GetCurrentDirectory() + @"\tessdata";
+                var engine = new TesseractEngine(tessdataDirectory, "eng", EngineMode.Default);
+
+                var img = Pix.LoadFromFile(filePath);
+                var page = engine.Process(img);
+
+                var text = page.GetText();
+                Console.WriteLine("Mean confidence: {0}", page.GetMeanConfidence());
+
+                Console.WriteLine("Text (GetText): \r\n{0}", text);
+                Console.Read();
+            
         }
     }
 }
