@@ -6,14 +6,21 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="229,39,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="KeySubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="392,153,0,0" VerticalAlignment="Top" Width="75" Click="KeySubmitButton_Click"/>
-        <Button x:Name="StudentSubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="392,223,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="KeyTextBox" HorizontalAlignment="Left" Height="23" Margin="66,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="66,223,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201"/>
-        <Button x:Name="KeySearchButton" Content="Search" HorizontalAlignment="Left" Margin="286,153,0,0" VerticalAlignment="Top" Width="75" Click="KeySearchButton_Click"/>
-        <Button x:Name="StudentSearchButton" Content="Search" HorizontalAlignment="Left" Margin="286,223,0,0" VerticalAlignment="Top" Width="75"/>
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Label x:Name="TitleLabel" Content="21st Century Grading" Margin="189,34,168,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="14" Height="29"/>
+        <Button x:Name="KeySubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="337,161,0,0" VerticalAlignment="Top" Width="75" Click="KeySubmitButton_Click" FontFamily="Bookman Old Style"/>
+        <Button x:Name="StudentSubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="337,226,0,0" VerticalAlignment="Top" Width="75" FontFamily="Bookman Old Style" Click="StudentSubmitButton_Click"/>
+        <TextBox x:Name="KeyTextBox" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" TextWrapping="Wrap" Text="Search for test key file" VerticalAlignment="Top" Width="242" FontFamily="Bookman Old Style"/>
+        <TextBox x:Name="StudentsTextBox" HorizontalAlignment="Left" Height="23" Margin="10,223,0,0" TextWrapping="Wrap" Text="Search for student tests file" VerticalAlignment="Top" Width="242" FontFamily="Bookman Old Style"/>
+        <Button x:Name="KeySearchButton" Content="Search" HorizontalAlignment="Left" Margin="257,161,0,0" VerticalAlignment="Top" Width="75" Click="KeySearchButton_Click" FontFamily="Bookman Old Style"/>
+        <Button x:Name="StudentSearchButton" Content="Search" HorizontalAlignment="Left" Margin="257,226,0,0" VerticalAlignment="Top" Width="75" FontFamily="Bookman Old Style" Click="StudentSearchButton_Click"/>
+        <CheckBox x:Name="KeySubmitted" Content="Submitted" HorizontalAlignment="Left" Margin="422,162,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <Button x:Name="beginGradingButton" Content="Begin Grading Process" HorizontalAlignment="Left" Margin="337,280,0,0" VerticalAlignment="Top" Width="160" FontFamily="Bookman Old Style" Click="beginGradingButton_Click"/>
+        <Label x:Name="studentTestsSubmittedCounter" Content="0 tests have been submitted" HorizontalAlignment="Left" Margin="337,251,-11,0" VerticalAlignment="Top" Width="195" FontFamily="Bookman Old Style" Height="24"/>
+        <TextBox x:Name="finalFileDestinationTextBox" HorizontalAlignment="Left" Height="22" Margin="10,98,0,0" TextWrapping="Wrap" Text="Search for final file destination" VerticalAlignment="Top" Width="242"/>
+        <Button x:Name="resultFileLocationSubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="337,99,0,0" VerticalAlignment="Top" Width="75" FontFamily="Bookman Old Style" Click="resultFileLocationSubmitButton_Click"/>
+        <Button x:Name="resultFileLocationSearchButton" Content="Search" HorizontalAlignment="Left" Margin="257,99,0,0" VerticalAlignment="Top" Width="75" FontFamily="Bookman Old Style" Click="resultFileLocationSearchButton_Click"/>
+        <CheckBox x:Name="finalDestinationSubmitted" Content="Submitted" HorizontalAlignment="Left" Margin="422,100,0,0" VerticalAlignment="Top" IsEnabled="False"/>
 
     </Grid>
 </Window>
