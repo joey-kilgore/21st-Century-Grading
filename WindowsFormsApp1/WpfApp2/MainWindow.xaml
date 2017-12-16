@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="229,39,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="KeySubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="392,153,0,0" VerticalAlignment="Top" Width="75" Click="KeySubmitButton_Click"/>
+        <Button x:Name="StudentSubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="392,223,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="KeyTextBox" HorizontalAlignment="Left" Height="23" Margin="66,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="66,223,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201"/>
+        <Button x:Name="KeySearchButton" Content="Search" HorizontalAlignment="Left" Margin="286,153,0,0" VerticalAlignment="Top" Width="75" Click="KeySearchButton_Click"/>
+        <Button x:Name="StudentSearchButton" Content="Search" HorizontalAlignment="Left" Margin="286,223,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
