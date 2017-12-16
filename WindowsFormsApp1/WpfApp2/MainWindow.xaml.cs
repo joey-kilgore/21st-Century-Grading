@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Tesseract;
 
+
 namespace WpfApp2
 {
     /// <summary>
@@ -21,8 +23,17 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<string> keyAnswers = new List<string>();
+        public List<string> studentNames = new List<string>();
+        public List<List<string>> studentAnswers = new List<List<string>>();
+        public List<List<int>> grades = new List<List<int>>();
+
+        public TesseractEngine engine;
+
         public MainWindow()
         {
+            String tessdataDirectory = System.IO.Directory.GetCurrentDirectory() + @"\tessdata";
+            engine = new TesseractEngine(tessdataDirectory, "eng", EngineMode.Default);
             InitializeComponent();
         }
 
@@ -39,26 +50,28 @@ namespace WpfApp2
 
         private void KeySubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            printToConsole(KeyTextBox.Text);
+            //printToConsole(KeyTextBox.Text);
+            Grading.sendKey(KeyTextBox.Text);
         }
 
         public static void printToConsole(string filePath)
         {
-           
-                Console.WriteLine("CURRENT DIRECTORY: " + System.IO.Directory.GetCurrentDirectory());
-                
-                String tessdataDirectory = System.IO.Directory.GetCurrentDirectory() + @"\tessdata";
-                var engine = new TesseractEngine(tessdataDirectory, "eng", EngineMode.Default);
 
-                var img = Pix.LoadFromFile(filePath);
-                var page = engine.Process(img);
+            Console.WriteLine("CURRENT DIRECTORY: " + System.IO.Directory.GetCurrentDirectory());
 
-                var text = page.GetText();
-                Console.WriteLine("Mean confidence: {0}", page.GetMeanConfidence());
+            String tessdataDirectory = System.IO.Directory.GetCurrentDirectory() + @"\tessdata";
+            var engine = new TesseractEngine(tessdataDirectory, "eng", EngineMode.Default);
 
-                Console.WriteLine("Text (GetText): \r\n{0}", text);
-                Console.Read();
-            
+            var img = Pix.LoadFromFile(filePath);
+            var page = engine.Process(img);
+
+            var text = page.GetText();
+            Console.WriteLine("Mean confidence: {0}", page.GetMeanConfidence());
+
+            Console.WriteLine("Text (GetText): \r\n{0}", text);
+            Console.Read();
+
         }
+        
     }
 }
