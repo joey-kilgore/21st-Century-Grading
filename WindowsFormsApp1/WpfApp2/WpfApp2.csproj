@@ -75,12 +75,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="choosingQuestionType.xaml.cs">
       <DependentUpon>choosingQuestionType.xaml</DependentUpon>
     </Compile>
     <Compile Include="gradingShortAnswer.xaml.cs">
       <DependentUpon>gradingShortAnswer.xaml</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Grading.cs" />
+>>>>>>> refs/remotes/origin/master
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
