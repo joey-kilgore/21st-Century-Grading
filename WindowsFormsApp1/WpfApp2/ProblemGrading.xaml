@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp2.ProblemGrading"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="ProblemGrading" Height="350" Width="525">
+    <Grid Margin="0,0,-4,-2.333" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Label x:Name="problemCounterLabel" Content="Problem 1" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style"/>
+        <ComboBox x:Name="chooseProblemType" HorizontalAlignment="Left" Margin="35,54,0,0" VerticalAlignment="Top" Width="222" Height="28"/>
+        <Button x:Name="problemTypeSubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="183,105,0,0" VerticalAlignment="Top" Width="74" Height="28" Click="problemTypeSubmitButton_Click"/>
+        <Label Content="-- Key Answer --" HorizontalAlignment="Left" Margin="35,153,0,0" VerticalAlignment="Top" Width="101" Height="28"/>
+        <ComboBox x:Name="pointSelection" HorizontalAlignment="Left" Margin="400,186,0,0" VerticalAlignment="Top" Width="74" Height="28"/>
+        <TextBox x:Name="enterPointsTextBox" HorizontalAlignment="Left" Height="28" Margin="442,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+        <Label Content="-- Student Answer --" HorizontalAlignment="Left" Margin="35,186,0,0" VerticalAlignment="Top" Height="28" Width="121"/>
+        <Label x:Name="keyAnswerLabel" Content="" HorizontalAlignment="Left" Margin="165,153,0,0" VerticalAlignment="Top" Height="28" Width="215"/>
+        <Label x:Name="studentAnswerLabel" Content="" HorizontalAlignment="Left" Margin="165,186,0,0" VerticalAlignment="Top" Height="28" Width="215"/>
+        <Label x:Name="enterTotalPossiblePoints" Content="Enter total possible points" HorizontalAlignment="Left" Margin="272,54,0,0" VerticalAlignment="Top" Height="28" Width="153"/>
+        <CheckBox x:Name="typeAndPointsSubmittedCheckbox" Content="Submitted" HorizontalAlignment="Left" Margin="272,112,0,0" VerticalAlignment="Top" Height="21"/>
+        <Button x:Name="problemSubmissionButton" Content="Submit Problem" HorizontalAlignment="Left" Margin="213,239,0,0" VerticalAlignment="Top" Width="102" Click="problemSubmissionButton_click"/>
+
+    </Grid>
+</Window>
