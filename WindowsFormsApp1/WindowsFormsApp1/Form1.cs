@@ -15,6 +15,17 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            this.Size = new Size(450, 425);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentTestTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
